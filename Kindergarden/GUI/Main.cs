@@ -23,9 +23,6 @@ namespace Kindergarden
             var ashboard = new Dashboard();
             panel2.Controls.Add(ashboard);
 
-           
-
-
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
