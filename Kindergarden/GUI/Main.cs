@@ -16,12 +16,15 @@ namespace Kindergarden
         public Main()
         {
             InitializeComponent();
+
+            panel1.BackColor = Color.FromArgb(0, 0, 0, 0);
+            panel2.BackColor = Color.FromArgb(0, 0, 0, 0);
+            SQLConnection s = new SQLConnection();
+            s.executeProc(null);
         }
 
-        private void mainButton_Click(object sender, EventArgs e)
+        private void Main_Load(object sender, EventArgs e)
         {
-            var ashboard = new Dashboard();
-            panel2.Controls.Add(ashboard);
 
         }
 
@@ -30,9 +33,21 @@ namespace Kindergarden
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            panel2.Controls.Clear();
-        }
+        /*  private void mainButton_Click(object sender, EventArgs e)
+          {
+              var ashboard = new Dashboard();
+              panel2.Controls.Add(ashboard);
+
+          }
+
+          private void panel2_Paint(object sender, PaintEventArgs e)
+          {
+
+          }
+
+          private void button2_Click(object sender, EventArgs e)
+          {
+              panel2.Controls.Clear();
+          }*/
     }
 }

@@ -26,25 +26,42 @@ class SQLConnection
             // Open the SqlConnection.
             conn.Open();
             //Create the SQLCommand object
-            using (SqlCommand command = new SqlCommand("getNumOfKid", conn) { CommandType = System.Data.CommandType.StoredProcedure })
+            using (SqlCommand command = new SqlCommand("deleteKid", conn) { CommandType = System.Data.CommandType.StoredProcedure })
             {
                 //Pass the parameter values here
-                /*command.Parameters.AddWithValue("@YourSpParameter", "ParameterValue");
-                command.Parameters.AddWithValue("@YourSpParameter", "ParameterValue");*/
+                command.Parameters.AddWithValue("@kid", "101122824");
+                /*command.Parameters.AddWithValue("@YourSpParameter", "ParameterValue");*/
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     //read the data
-                    while (reader.Read())
+                    /*while (reader.Read())
                     {
                         Console.WriteLine(reader["total"].ToString());
-                    }
+                    }*/
                 }
+
             }
+            conn.Close();
         }
     }
 
+    /*
+    private void mainButton_Click(object sender, EventArgs e)
+    {
+        var ashboard = new Dashboard();
+        panel2.Controls.Add(ashboard);
 
+    }
 
+    private void panel2_Paint(object sender, PaintEventArgs e)
+    {
 
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+        panel2.Controls.Clear();
+    }
+    */
 }
 
