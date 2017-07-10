@@ -29,7 +29,7 @@ class SQLConnection
             using (SqlCommand command = new SqlCommand("deleteKid", conn) { CommandType = System.Data.CommandType.StoredProcedure })
             {
                 //Pass the parameter values here
-                command.Parameters.AddWithValue("@kid", "10112767672855524");
+                command.Parameters.AddWithValue("@kid", "1011276767ff2855524");
                 /*command.Parameters.AddWithValue("@YourSpParameter", "ParameterValue");*/
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
