@@ -29,16 +29,18 @@ class SQLConnection
             using (SqlCommand command = new SqlCommand("deleteKid", conn) { CommandType = System.Data.CommandType.StoredProcedure })
             {
                 //Pass the parameter values here
-                command.Parameters.AddWithValue("@kid", "1011276767ff2855524");
+                command.Parameters.AddWithValue("@kid", "111190611");
                 /*command.Parameters.AddWithValue("@YourSpParameter", "ParameterValue");*/
-                using (SqlDataReader reader = command.ExecuteReader())
+                int rowsAffected = command.ExecuteNonQuery();
+                Console.WriteLine("THE PRINT "+rowsAffected);
+               /* using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    //read the data
-                    /*while (reader.Read())
+                    
+                    while (reader.Read())
                     {
                         Console.WriteLine(reader["total"].ToString());
-                    }*/
-                }
+                    }
+                }*/
 
             }
             conn.Close();
